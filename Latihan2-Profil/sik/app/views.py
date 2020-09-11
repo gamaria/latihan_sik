@@ -52,48 +52,8 @@ class ProfilAdminView(ModelView):
     datamodel = SQLAInterface(Profil)
 
 
-#6.Tampilan profil untuk user umum
-
-class MyView(BaseView):
-    
-    default_view = "method1"
-
-    @expose("/method1/")
-    
-    def method1(self):
-        # do something with param1
-        # and return to previous page or index
-        return "Hello"
-
-    @expose("/method2/<string:param1>")
-    
-    def method2(self, param1):
-        # do something with param1
-        # and render template with param
-        param1 = "Goodbye %s" % (param1)
-        return param1
-
-    @expose("/method3/<string:param1>")
-    
-    def method3(self, param1):
-        # do something with param1
-        # and render template with param
-        param1 = "Goodbye %s" % (param1)
-        return self.render_template("profil.html", param1=param1)
-    
-
-
 db.create_all()
 #5.register class admin profil
 appbuilder.add_view(
     ProfilAdminView, "Data Profil", icon="fa fa-bandcamp", category="Data Desa"
 )
-
-
-appbuilder.add_view(MyView(), "Method1", category="My View")
-# appbuilder.add_view(
-#     MyView(), "Method2", href='/myview/method2/jonh', category='My View'
-# )
-# Use add link instead there is no need to create MyView twice.
-appbuilder.add_link("Method2", href="/myview/method2/jonh", category="My View")
-appbuilder.add_link("Method3", href="/myview/method3/jonh", category="My View")
