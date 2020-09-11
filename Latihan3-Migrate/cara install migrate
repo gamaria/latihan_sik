@@ -1,4 +1,7 @@
 #install migrate : pip install flask_migrate
+
+hapus dulu tabel profil menggunakan tools sqlitebrowser Link download sql https://sqlitebrowser.org/blog/portableapp-for-3-11-2-release-now-available/
+
 #pengunaan migrate
 $ export FLASK_APP=app/__init__.py
 $ flask db init
