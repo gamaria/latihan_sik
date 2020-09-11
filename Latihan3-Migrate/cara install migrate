@@ -1,6 +1,9 @@
-#install migrate : pip install flask_migrate
+untuk menabahkan sebuah field baru ada beberapa cara:
+menggunakan flas_migrate langkah sebagai berikut:
 
-hapus dulu tabel profil menggunakan tools sqlitebrowser Link download sql https://sqlitebrowser.org/blog/portableapp-for-3-11-2-release-now-available/
+1. install migrate : pip install flask_migrate
+
+2. hapus dulu tabelnya (contoh: profil) menggunakan tools sqlitebrowser Link download sql https://sqlitebrowser.org/blog/portableapp-for-3-11-2-release-now-available/
 
 #pengunaan migrate
 $ export FLASK_APP=app/__init__.py
@@ -9,3 +12,6 @@ $ flask db migrate
 # Check the migration script
 $ flask db upgrate --sql
 $ flask db upgrade   #dipakai
+
+atau cara lain:
+modifikasi tabel secara langsung di tools sqlitebrower dengan menambhan field sesuai dengan yang ada di models.py
